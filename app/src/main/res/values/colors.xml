@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="PrimaryColor">#4169E1</color>
+    <color name="PrimaryDarkColor">#3A5ECA</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="red_bg">#FA8072</color>
+    <color name="green_bg">#3CB371</color>
+    <color name="blue_bg">#6495ED</color>
+    <color name="dark_red">#FF0000</color>
+    <color name="transparent_white">#00FFFFFF</color>
+    <color name="window_background">#FFF5F5F5</color>
+    <color name="bg_gradient_start">#31244e</color>
+    <color name="bg_gradient_end">#6b394c</color>
+</resources>

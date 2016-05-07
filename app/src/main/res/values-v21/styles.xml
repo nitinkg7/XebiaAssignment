@@ -1,11 +1,13 @@
 <resources>
+
     <style name="AppTheme" parent="BaseTheme">
-        </style>
-    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/PrimaryDarkColor</item>
+    </style>
+    <style name="BaseTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/PrimaryColor</item>
         <item name="colorPrimaryDark">@color/PrimaryDarkColor</item>
         <item name="colorAccent">@android:color/white</item>
-        <item name="android:windowBackground">@color/window_background</item>
         <item name="colorControlNormal">#c5c5c5</item>
         <item name="colorControlActivated">@color/PrimaryColor</item>
         <item name="colorControlHighlight">#c5c5c5</item>
