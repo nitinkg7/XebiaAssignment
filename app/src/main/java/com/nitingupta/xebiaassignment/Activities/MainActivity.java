@@ -1,6 +1,7 @@
 package com.nitingupta.xebiaassignment.Activities;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
@@ -41,11 +42,9 @@ public class MainActivity extends AppCompatActivity {
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
-       /* if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeButtonEnabled(true);
-            actionBar.setDisplayShowHomeEnabled(true);
-        }*/
+        if (actionBar != null) {
+            actionBar.setTitle("Xebia Weather App");
+        }
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
     }
 
@@ -54,20 +53,23 @@ public class MainActivity extends AppCompatActivity {
         loadWeatherResults();
     }
     public void loadWeatherResults() {
-
-
         WeatherReportReadTask weatherReportReadTask = new WeatherReportReadTask(this, new WeatherResultsLoaded() {
             @Override
             public void onResultLoaded(final WeatherResultModel weatherResultModel) {
                 Log.d("Json Response= ", weatherResultModel.toString());
                 if (weatherResultModel != null && weatherResultModel.getDayWiseWeatherModelList() != null && weatherResultModel.getDayWiseWeatherModelList().size() > 0) {
-                    List<WeatherResultModel.DayWiseWeatherModel> dayWiseWeatherModels = weatherResultModel.getDayWiseWeatherModelList();
+                    final List<WeatherResultModel.DayWiseWeatherModel> dayWiseWeatherModels = weatherResultModel.getDayWiseWeatherModelList();
                     LinearLayoutManager layoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
                     recyclerView.setLayoutManager(layoutManager);
                     recyclerView.setAdapter(new RecyclerAdapter(MainActivity.this, dayWiseWeatherModels, new RecyclerAdapter.ItemClickListner(){
                         @Override
                         public void itemClicked(int pos) {
-                            Snackbar.make(MainActivity.this.findViewById(android.R.id.content), "Item clicked", Snackbar.LENGTH_SHORT).show();
+                            Intent intent = new Intent(MainActivity.this, WeatherDetailActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable("model", dayWiseWeatherModels.get(pos));
+                            intent.putExtra("bundle", bundle);
+                            startActivity(intent);
+
                         }
                     }));
                 }else{

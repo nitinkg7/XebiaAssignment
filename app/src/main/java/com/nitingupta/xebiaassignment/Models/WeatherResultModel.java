@@ -2,12 +2,13 @@ package com.nitingupta.xebiaassignment.Models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by nitin on 5/8/16.
  */
-public class WeatherResultModel {
+public class WeatherResultModel implements Serializable{
     public City getCity() {
         return city;
     }
@@ -30,7 +31,7 @@ public class WeatherResultModel {
 
     @SerializedName("city")
     City city;
-    public class City{
+    public class City implements Serializable{
         public Long getId() {
             return id;
         }
@@ -57,7 +58,7 @@ public class WeatherResultModel {
         String name;
         @SerializedName("coord")
         Coordinate coordinate;
-        class Coordinate{
+        class Coordinate implements Serializable{
             public Double getLon() {
                 return lon;
             }
@@ -85,7 +86,7 @@ public class WeatherResultModel {
     @SerializedName("list")
     List<DayWiseWeatherModel> dayWiseWeatherModelList;
 
-    public class DayWiseWeatherModel{
+    public class DayWiseWeatherModel implements Serializable{
         public Long getDate() {
             return date;
         }
@@ -110,7 +111,7 @@ public class WeatherResultModel {
             return speed;
         }
 
-        public Double getDegree() {
+        public Integer getDegree() {
             return degree;
         }
 
@@ -126,7 +127,7 @@ public class WeatherResultModel {
         Long date;
         @SerializedName("temp")
         Temperatutre temperatutre;
-        public class Temperatutre{
+        public class Temperatutre implements Serializable{
             public Double getDay() {
                 return day;
             }
@@ -170,7 +171,7 @@ public class WeatherResultModel {
         Integer humidity;
         @SerializedName("weather")
         List<Weather> weatherList;
-        public class Weather{
+        public class Weather implements Serializable{
             public Long getId() {
                 return id;
             }
@@ -199,7 +200,7 @@ public class WeatherResultModel {
         @SerializedName("speed")
         Double speed;
         @SerializedName("deg")
-        Double degree;
+        Integer degree;
         @SerializedName("clouds")
         Long clouds;
         @SerializedName("rain")
