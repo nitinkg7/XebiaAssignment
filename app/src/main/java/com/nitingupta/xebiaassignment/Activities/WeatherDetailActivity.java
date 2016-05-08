@@ -22,9 +22,11 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.format.DateFormat;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nitingupta.xebiaassignment.Models.WeatherResultModel;
@@ -40,7 +42,8 @@ import java.util.Locale;
 public class WeatherDetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_NAME = "model";
-    TextView date, day, minMax, description, mornTemp, dayTemp, eveTemp, nightTemp, pressure, humidity, speed, degree, clouds;
+    TextView minMax, description, mornTemp, dayTemp, eveTemp, nightTemp, pressure, humidity, speed, degree, clouds, temperature;
+    LinearLayout mornLayout, dayLayout, eveLayout, nightLayout, pressureLayout, speedLayout, humidityLayout, dirLayout, cloudLayout;
     WeatherResultModel.DayWiseWeatherModel weatherModel;
     ImageView icon;
     ActionBar actionBar;
@@ -62,6 +65,16 @@ public class WeatherDetailActivity extends AppCompatActivity {
         speed = (TextView)findViewById(R.id.speed);
         degree = (TextView)findViewById(R.id.degree);
         clouds= (TextView)findViewById(R.id.clouds);
+        mornLayout = (LinearLayout)findViewById(R.id.mornLayout);
+        dayLayout = (LinearLayout)findViewById(R.id.dayLayout);
+        eveLayout = (LinearLayout)findViewById(R.id.eveLayout);
+        nightLayout = (LinearLayout)findViewById(R.id.nightLayout);
+        pressureLayout = (LinearLayout)findViewById(R.id.pressureLayout);
+        speedLayout = (LinearLayout)findViewById(R.id.speedLayout);
+        humidityLayout = (LinearLayout)findViewById(R.id.humidityLayout);
+        dirLayout = (LinearLayout)findViewById(R.id.dirLayout);
+        temperature = (TextView)findViewById(R.id.temperature);
+        cloudLayout = (LinearLayout)findViewById(R.id.cloudLayout);
 
         Bundle bundle = intent.getBundleExtra("bundle");
         if (bundle != null)
@@ -91,42 +104,52 @@ public class WeatherDetailActivity extends AppCompatActivity {
                 description.setVisibility(View.GONE);
 
         }
+        else{
+         icon.setVisibility(View.GONE);
+        description.setVisibility(View.GONE);
+        }
         if (weatherModel.getHumidity() != null)
             humidity.setText(weatherModel.getHumidity() + "%");
-        else
-            humidity.setVisibility(View.GONE);
+        else{
+            humidityLayout.setVisibility(View.GONE);
+        }
         if (weatherModel.getDate() != null) {
             Date dateNew = new Date(weatherModel.getDate() * 1000);
             String dateString = DateFormat.format("dd/MMM/yyyy", dateNew).toString();
             Calendar now = Calendar.getInstance();
             now.setTime(dateNew);
             actionBar.setTitle(dateString + " " + now.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT, Locale.US));
-        }
+        }else
+        actionBar.setTitle("Weather Detail");
         if (weatherModel.getTemperatutre() != null) {
             minMax.setText(weatherModel.getTemperatutre().getMax() + "\u00B0" + "/" + weatherModel.getTemperatutre().getMin() + "\u00B0");
             mornTemp.setText(weatherModel.getTemperatutre().getMorning()+"\u00B0");
             dayTemp.setText(weatherModel.getTemperatutre().getDay()+"\u00B0");
-            eveTemp.setText(weatherModel.getTemperatutre().getEvening()+"\u00B0");
-            nightTemp.setText(weatherModel.getTemperatutre().getNight()+"\u00B0");
+            eveTemp.setText(weatherModel.getTemperatutre().getEvening() + "\u00B0");
+            nightTemp.setText(weatherModel.getTemperatutre().getNight() + "\u00B0");
         } else{
+          temperature.setVisibility(View.GONE);
+            mornLayout.setVisibility(View.GONE);
+            dayLayout.setVisibility(View.GONE);
+            eveLayout.setVerticalGravity(View.GONE);
+            nightLayout.setVisibility(View.GONE);
             minMax.setVisibility(View.GONE);
-            mornTemp.setVisibility(View.GONE);
-            dayTemp.setVisibility(View.GONE);
-            eveTemp.setVisibility(View.GONE);
-            nightTemp.setVisibility(View.GONE);
         }
         if (weatherModel.getPressure()!=null){
             pressure.setText(weatherModel.getPressure()+" hPa");
-        }else pressure.setVisibility(View.GONE);
+        }else pressureLayout.setVisibility(View.GONE);
         if (weatherModel.getSpeed()!=null){
             speed.setText(weatherModel.getSpeed()+" M/s");
-        }
+        }else
+        speedLayout.setVisibility(View.GONE);
         if (weatherModel.getDegree()!=null){
             degree.setText(CommonUtil.degToCompass(weatherModel.getDegree()));
-        }
+        }else dirLayout.setVisibility(View.GONE);
         if (weatherModel.getClouds()!=null){
             clouds.setText(weatherModel.getClouds()+" %");
         }
+        else
+            cloudLayout.setVisibility(View.GONE);
     }
 
 

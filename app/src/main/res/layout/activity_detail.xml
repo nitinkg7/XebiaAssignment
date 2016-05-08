@@ -84,12 +84,14 @@
                     android:text="Temperature"
                     android:textColor="@color/PrimaryColor"
                     android:textSize="22sp"
+                    android:id="@+id/temperature"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/mornLayout"
                     android:orientation="horizontal">
 
                     <TextView
@@ -115,6 +117,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/dayLayout"
                     android:orientation="horizontal">
 
                     <TextView
@@ -141,6 +144,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/eveLayout"
                     android:orientation="horizontal">
 
                     <TextView
@@ -167,6 +171,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/nightLayout"
                     android:orientation="horizontal">
 
                     <TextView
@@ -193,6 +198,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/pressureLayout"
                     android:orientation="horizontal">
 
                     <TextView
@@ -220,6 +226,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/humidityLayout"
                     android:orientation="horizontal">
 
                     <TextView
@@ -247,6 +254,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/speedLayout"
                     android:orientation="horizontal">
 
                     <TextView
@@ -274,6 +282,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/dirLayout"
                     android:orientation="horizontal">
 
                     <TextView
@@ -302,6 +311,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/cloudLayout"
                     android:orientation="horizontal">
 
                     <TextView
