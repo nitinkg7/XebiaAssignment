@@ -28,6 +28,7 @@ public class WeatherReportReadTask extends AsyncTask<Object, Integer, String> {
             HttpHelper http = new HttpHelper();
             weatherReportData = http.read(weatherUrl);
         } catch (Exception e) {
+            return null;
         }
         return weatherReportData;
     }

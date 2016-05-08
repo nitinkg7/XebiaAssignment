@@ -26,6 +26,7 @@ public class ResultsProcessTask extends AsyncTask<Object, Integer, WeatherResult
             weatherResultModel = (WeatherResultModel) CommonUtil.loadJSONFromString(mContext, (String) inputObj[0], WeatherResultModel.class);
         } catch (Exception e) {
             Log.d("Exception", e.toString());
+            return null;
         }
         return weatherResultModel;
     }
