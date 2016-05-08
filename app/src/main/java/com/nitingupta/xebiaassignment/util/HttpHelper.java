@@ -1,4 +1,4 @@
-package com.nitingupta.xebiaassignment.Util;
+package com.nitingupta.xebiaassignment.util;
 
 /**
  * Created by nitin on 05/08/16.

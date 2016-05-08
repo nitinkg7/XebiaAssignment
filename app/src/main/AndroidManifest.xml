@@ -12,7 +12,7 @@
         android:label=""
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".Activities.MainActivity"
+            android:name=".activities.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             >
             <intent-filter>
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.WeatherDetailActivity"
+            android:name=".activities.WeatherDetailActivity"
             android:label=""
              />
     </application>

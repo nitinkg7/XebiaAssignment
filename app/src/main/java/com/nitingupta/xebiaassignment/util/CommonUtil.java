@@ -1,4 +1,4 @@
-package com.nitingupta.xebiaassignment.Util;
+package com.nitingupta.xebiaassignment.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

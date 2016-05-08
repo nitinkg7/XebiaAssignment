@@ -1,6 +1,6 @@
 package com.nitingupta.xebiaassignment.interfaces;
 
-import com.nitingupta.xebiaassignment.Models.WeatherResultModel;
+import com.nitingupta.xebiaassignment.models.WeatherResultModel;
 
 /**
  * Created by nitin on 05/08/16.

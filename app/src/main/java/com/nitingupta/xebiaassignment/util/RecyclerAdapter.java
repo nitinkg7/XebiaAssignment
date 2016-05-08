@@ -1,4 +1,4 @@
-package com.nitingupta.xebiaassignment.Util;
+package com.nitingupta.xebiaassignment.util;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.nitingupta.xebiaassignment.Models.WeatherResultModel;
+import com.nitingupta.xebiaassignment.models.WeatherResultModel;
 import com.nitingupta.xebiaassignment.R;
 import com.squareup.picasso.Picasso;
 

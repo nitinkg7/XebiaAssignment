@@ -1,4 +1,4 @@
-package com.nitingupta.xebiaassignment.Activities;
+package com.nitingupta.xebiaassignment.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -15,10 +15,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.nitingupta.xebiaassignment.Models.WeatherResultModel;
+import com.nitingupta.xebiaassignment.models.WeatherResultModel;
 import com.nitingupta.xebiaassignment.R;
-import com.nitingupta.xebiaassignment.Util.CommonUtil;
-import com.nitingupta.xebiaassignment.Util.RecyclerAdapter;
+import com.nitingupta.xebiaassignment.util.CommonUtil;
+import com.nitingupta.xebiaassignment.util.RecyclerAdapter;
 import com.nitingupta.xebiaassignment.asynctasks.WeatherReportReadTask;
 import com.nitingupta.xebiaassignment.interfaces.WeatherResultsLoaded;
 

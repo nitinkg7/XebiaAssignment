@@ -3,8 +3,8 @@ package com.nitingupta.xebiaassignment.asynctasks;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import com.nitingupta.xebiaassignment.Models.WeatherResultModel;
-import com.nitingupta.xebiaassignment.Util.CommonUtil;
+import com.nitingupta.xebiaassignment.models.WeatherResultModel;
+import com.nitingupta.xebiaassignment.util.CommonUtil;
 import com.nitingupta.xebiaassignment.interfaces.WeatherResultsLoaded;
 
 

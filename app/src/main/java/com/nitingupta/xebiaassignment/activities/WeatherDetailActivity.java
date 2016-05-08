@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.nitingupta.xebiaassignment.Activities;
+package com.nitingupta.xebiaassignment.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,16 +22,15 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.format.DateFormat;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.nitingupta.xebiaassignment.Models.WeatherResultModel;
+import com.nitingupta.xebiaassignment.models.WeatherResultModel;
 import com.nitingupta.xebiaassignment.R;
-import com.nitingupta.xebiaassignment.Util.CommonUtil;
+import com.nitingupta.xebiaassignment.util.CommonUtil;
 import com.squareup.picasso.Picasso;
 
 import java.util.Calendar;

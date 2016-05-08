@@ -2,9 +2,8 @@ package com.nitingupta.xebiaassignment.asynctasks;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
-import com.nitingupta.xebiaassignment.Util.HttpHelper;
+import com.nitingupta.xebiaassignment.util.HttpHelper;
 import com.nitingupta.xebiaassignment.interfaces.WeatherResultsLoaded;
 
 public class WeatherReportReadTask extends AsyncTask<Object, Integer, String> {

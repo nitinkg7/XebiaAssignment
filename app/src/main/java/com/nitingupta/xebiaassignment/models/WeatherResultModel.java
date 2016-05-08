@@ -1,4 +1,4 @@
-package com.nitingupta.xebiaassignment.Models;
+package com.nitingupta.xebiaassignment.models;
 
 import com.google.gson.annotations.SerializedName;
 
